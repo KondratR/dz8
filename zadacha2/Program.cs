@@ -42,24 +42,24 @@ void PrintMatrix(int[,] matrix)
 
 void MinRow(int[,] matr)
 {
-    int minRow = 0;
-    int minSumRow = 0;
-    int sumRow = 0;
+    int minimum = 0;
+    int minimumRow = 0;
+    int sum = 0;
     for (int i = 0; i < matr.GetLength(1); i++)
     {
-        minRow += matr[0, i];
+        minimum += matr[0, i];
     }
     for (int i = 0; i < matr.GetLength(0); i++)
     {
-        for (int j = 0; j < matr.GetLength(1); j++) sumRow += matr[i, j];
-        if (sumRow < minRow)
+        for (int j = 0; j < matr.GetLength(1); j++) sum += matr[i, j];
+        if (sum < minimum)
         {
-            minRow = sumRow;
-            minSumRow = i;
+            minimum = sum;
+            minimumRow = i;
         }
-        sumRow = 0;
+        sum = 0;
     }
-    Console.Write($"{minSumRow + 1} строка");
+    Console.Write($"{minimumRow + 1} строка");
 }
 
 int rows = ReadInt("Введите количество строк матрицы: ");
